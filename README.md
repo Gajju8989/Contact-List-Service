@@ -24,6 +24,24 @@ cd contact-app-task
 
 2. Ensure you have Go installed and configured properly.
 
+## Installing Dependencies
+
+To install all dependencies listed in the `go.mod` file for your Go project, follow these steps:
+
+1. **Open your terminal or command prompt.**
+
+2. **Navigate to the root directory of your Go project.**
+   
+3. Run go mod tidy
+Run the following command in your terminal to download and install all dependencies listed in the go.mod file:
+
+go mod tidy
+
+This command reads your go.mod file, downloads any missing dependencies, and removes any dependencies that are no longer used by your project. It also updates the go.sum file to reflect the changes.
+
+After running go mod tidy, all dependencies listed in your go.mod file should be installed in your project.
+
+
 3.Run the following command to start the server:'
 go run main.go
 4.The server will start running on port 8080 by default.
