@@ -65,7 +65,5 @@ Replace the values with your database configuration.
 The server will start running on port 8080 by default.
 
 API Documentation
-
-To view the API documentation, Click On These Link
 Open this URL to get all API details: https://documenter.getpostman.com/view/29203481/2sA35MxyXm.
 
