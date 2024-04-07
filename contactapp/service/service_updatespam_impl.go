@@ -6,19 +6,19 @@ import (
 	"task2/database/mysql/model/contact_list_model"
 )
 
-func (s *impl) CreateContact(ctx context.Context, req *model.ContactListRequest) error {
+func (s *impl) UpdateSpamStatus(ctx context.Context, req *model.ContactListRequest) error {
 
 	_, err := s.mySqlStore.GetAuthToken(ctx, req.Requester.RequesterPhoneNo)
 	if err != nil {
 		return err
 	}
-	//Creating an Entry to store contactDetails in GlobalContactList Table MySql.
-	createContactData := &contact_list_model.GlobalContactList{
+	createSqlPayload := &contact_list_model.GlobalContactList{
 		Name:        req.Name,
 		PhoneNumber: req.PhoneNumber,
+		Spam:        "true",
 	}
-	//StoringInDb
-	err = s.mySqlStore.StoreContactListInGlobalDb(ctx, createContactData)
+	err = s.mySqlStore.UpdateSpamStatus(ctx, createSqlPayload)
+
 	if err != nil {
 		return err
 	}

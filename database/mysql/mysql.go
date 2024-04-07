@@ -15,8 +15,11 @@ type MySqlStore interface {
 	StoreAuthToken(ctx context.Context, auth *authtoken.AuthToken) error
 	GetAuthToken(ctx context.Context, phoneNo string) (*authtoken.AuthToken, error)
 
-	//CreateContact
-	StoreContact(ctx context.Context, createContactData *contact_list_model.ContactList) error
+	//GlobalContactDb
+	StoreContactListInGlobalDb(ctx context.Context, createContactData *contact_list_model.GlobalContactList) error
+	UpdateSpamStatus(ctx context.Context, createContactData *contact_list_model.GlobalContactList) error
+	SearchByName(ctx context.Context, name string) ([]*contact_list_model.GlobalContactList, error)
+	SearchByPhoneNumber(ctx context.Context, phoneNumber string) ([]*contact_list_model.GlobalContactList, error)
 }
 
 type impl struct {

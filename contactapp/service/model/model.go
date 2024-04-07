@@ -15,3 +15,9 @@ type ContactListRequest struct {
 type Request struct {
 	RequesterPhoneNo string `json:"requester_phone_no"`
 }
+
+type ContactListResponseModel struct {
+	Name        string `json:"name"`
+	PhoneNumber string `json:"phone_number"`
+	Spam        string `json:"spam"`
+}

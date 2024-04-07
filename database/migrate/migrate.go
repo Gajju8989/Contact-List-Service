@@ -16,7 +16,7 @@ func MigrateAll(db *gorm.DB) error {
 		return err
 	}
 
-	if err := db.AutoMigrate(&contact_list_model.ContactList{}); err != nil {
+	if err := db.AutoMigrate(&contact_list_model.GlobalContactList{}); err != nil {
 		return err
 	}
 	return nil

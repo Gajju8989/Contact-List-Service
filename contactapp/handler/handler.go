@@ -8,6 +8,9 @@ import (
 type ContactAppHandler interface {
 	CreateUserHandler(c *gin.Context)
 	CreateContact(c *gin.Context)
+	UpdateSpamStatusHandler(c *gin.Context)
+	SearchByNameHandler(c *gin.Context)
+	SearchByPhoneNo(c *gin.Context)
 }
 
 type impl struct {
