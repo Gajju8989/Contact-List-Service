@@ -66,10 +66,6 @@ The server will start running on port 8080 by default.
 
 API Documentation
 
-To view the API documentation, follow these steps:
-
-Open a web browser and navigate to the following URL:
-API Documentation
-This link will direct you to the API documentation where you can explore and test the available APIs.
-
+To view the API documentation, Click On These Link
+Open this URL to get all API details: https://documenter.getpostman.com/view/29203481/2sA35MxyXm.
 
