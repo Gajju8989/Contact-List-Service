@@ -65,14 +65,11 @@ Replace the values with your database configuration.
 The server will start running on port 8080 by default.
 
 API Documentation
-The API documentation is generated using Swagger. To view the API documentation, follow these steps:
 
-1.Start the server (if not already running) by following step 4 in the Installation and Usage section.
+To view the API documentation, follow these steps:
 
-2.Open a web browser and navigate to the following URL:
-
-http://localhost:8080/swagger/index.html
-
-This will open the Swagger UI where you can explore and test the available APIs.
+Open a web browser and navigate to the following URL:
+API Documentation
+This link will direct you to the API documentation where you can explore and test the available APIs.
 
 
