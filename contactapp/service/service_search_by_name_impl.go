@@ -7,10 +7,13 @@ import (
 )
 
 func (s *impl) SearchByName(ctx context.Context, name, requesterPhoneNo string) ([]*model.ContactListResponseModel, error) {
+
+	//Checking If Token Exist For RequesterPhoneNo or Token is expired
 	_, err := s.mySqlStore.GetAuthToken(ctx, requesterPhoneNo)
 	if err != nil {
 		return nil, err
 	}
+
 	var res []*contact_list_model.GlobalContactList
 	res, err = s.mySqlStore.SearchByName(ctx, name)
 	if err != nil {

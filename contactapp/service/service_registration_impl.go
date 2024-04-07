@@ -23,15 +23,18 @@ func (s *impl) CreateUser(ctx context.Context, userData *model.UserRegistrations
 	if err != nil {
 		return err
 	}
+	//Generating the JWTToken for PhoneNumber that is provided by User
 	token, err := generateJWTToken(userData.PhoneNumber)
 	if err != nil {
 		return err
 	}
+	// CreatingAuthTokenData to Store in Db
 	createAuthTokenData := &authtoken.AuthToken{
 		PhoneNo: userData.PhoneNumber,
 		Token:   token,
 		Expiry:  time.Now().Add(24 * 30 * time.Hour).Unix(),
 	}
+	//Storing Token and TokenData in Db
 	err = s.mySqlStore.StoreAuthToken(ctx, createAuthTokenData)
 	if err != nil {
 		return err

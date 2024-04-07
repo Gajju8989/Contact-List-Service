@@ -14,7 +14,7 @@ func (h *impl) CreateContact(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	err = h.authService.CreateContact(c, reqData)
+	err = h.contactAppService.CreateContact(c, reqData)
 	if err != nil {
 		if errors.Is(err, errors.New("Unauthorized: User Not Found")) {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": err.Error()})

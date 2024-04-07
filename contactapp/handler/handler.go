@@ -14,9 +14,9 @@ type ContactAppHandler interface {
 }
 
 type impl struct {
-	authService service.ContactAppSvc
+	contactAppService service.ContactAppSvc
 }
 
 func NewHandler(authService service.ContactAppSvc) ContactAppHandler {
-	return &impl{authService: authService}
+	return &impl{contactAppService: authService}
 }

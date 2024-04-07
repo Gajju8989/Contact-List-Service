@@ -8,6 +8,7 @@ import (
 
 func (s *impl) CreateContact(ctx context.Context, req *model.ContactListRequest) error {
 
+	//Checking If Token Exist For RequesterPhoneNo or Token is expired
 	_, err := s.mySqlStore.GetAuthToken(ctx, req.Requester.RequesterPhoneNo)
 	if err != nil {
 		return err

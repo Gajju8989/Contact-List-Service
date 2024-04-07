@@ -21,7 +21,7 @@ func (h *impl) CreateUserHandler(c *gin.Context) {
 		return
 	}
 	reqData.Password = hashedPassword
-	err = h.authService.CreateUser(c, reqData)
+	err = h.contactAppService.CreateUser(c, reqData)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
